@@ -1,0 +1,1540 @@
+openapi: 3.1.0
+info:
+  title: Blink API
+  version: '2026-10-24'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-24: 29 operation(s) read from 28 public documentation page(s) (each
+    operation names its page in x-source). This is not the provider''s published contract; Blink has published no machine-readable contract that
+    the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 4
+    documentation: 25
+    pages-with-code: 28
+    pages-read: 28
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-24'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.blinkops.com/docs/api/rql.md
+  - https://docs.blinkops.com/docs/api/blink-rest-api.md
+  - https://docs.blinkops.com/docs/api/groups/get-groups.md
+  - https://docs.blinkops.com/docs/api/groups/create-group.md
+  - https://docs.blinkops.com/docs/api/groups/delete-group.md
+  - https://docs.blinkops.com/docs/api/groups/list-group-users.md
+  - https://docs.blinkops.com/docs/api/users/get-groups-of-user.md
+  - https://docs.blinkops.com/docs/api/groups/add-users-to-group.md
+  - https://docs.blinkops.com/docs/api/workflows/share-portal-app.md
+  - https://docs.blinkops.com/docs/api/connections/edit-connection.md
+  - https://docs.blinkops.com/docs/api/connections/list-connections.md
+  - https://docs.blinkops.com/docs/api/workflows/execute-a-playbook.md
+  - https://docs.blinkops.com/docs/api/case-management/create-a-case.md
+  - https://docs.blinkops.com/docs/api/case-management/create-a-task.md
+  - https://docs.blinkops.com/docs/api/case-management/update-a-case.md
+  - https://docs.blinkops.com/docs/api/case-management/update-a-task.md
+  - https://docs.blinkops.com/docs/api/connections/create-connection.md
+  - https://docs.blinkops.com/docs/api/connections/delete-connection.md
+  - https://docs.blinkops.com/docs/api/workflows/un-share-portal-app.md
+  - https://docs.blinkops.com/docs/api/groups/remove-users-from-group.md
+  - https://docs.blinkops.com/docs/api/roles/list-all-available-roles.md
+  - https://docs.blinkops.com/docs/api/tables/list-records-from-table.md
+  - https://docs.blinkops.com/docs/api/tables/updates-field-for-table.md
+  - https://docs.blinkops.com/docs/api/case-management/create-an-alert.md
+  - https://docs.blinkops.com/docs/api/case-management/update-an-alert.md
+  - https://docs.blinkops.com/docs/api/users/remove-a-user-from-groups.md
+  - https://docs.blinkops.com/docs/api/workflows/create-a-new-playbook.md
+  - https://docs.blinkops.com/docs/api/workflows/edit-playbook-metadata.md
+servers:
+- url: https://<your-tenant>.app.blinkops.com
+paths:
+  /:
+    delete:
+      operationId: delete
+      tags:
+      - Api
+      summary: DELETE /
+      x-source: https://docs.blinkops.com/docs/api/groups/delete-group.md
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request DELETE  --url 'https://<your-tenant>.app.blinkops.com/api/v1/group/{id}'  --header 'BLINK-API-KEY: <api-key>'\n\
+          \        - lang: python\n          label: Python\n          source: |\n            import requests"
+    get:
+      operationId: get
+      tags:
+      - Api
+      summary: GET /
+      x-source: https://docs.blinkops.com/docs/api/rql.md
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -G "https://<your-tenant>.app.blinkops.com/api/v1/connection_types"  -H "BLINK-API-KEY: <your-api-key>"  --data-urlencode
+          ''q={"select":["name","id"],"limit":1,"offset":0}''
+
+          ```'
+    post:
+      operationId: post
+      tags:
+      - Api
+      summary: POST /
+      x-source: https://docs.blinkops.com/docs/api/blink-rest-api.md
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -L -X POST ''https://<your-tenant>.app.blinkops.com/api/v1/playbooks/33168bb7-a395-47c9-ba7a-d44b649940dc/execute''  -H
+          ''Content-Type: application/json''  -H ''Accept: application/json''  -H ''BLINK-API-KEY: h4536jlkh345l456l35y4543l5ls''
+
+          ```'
+    put:
+      operationId: put
+      tags:
+      - Api
+      summary: PUT /
+      x-source: https://docs.blinkops.com/docs/api/connections/edit-connection.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request PUT  --url 'https://<your-tenant>.app.blinkops.com/api/v1/workspace/{ws_id}/connections/{id}'  --header 'BLINK-API-KEY:\
+          \ <api-key>'  --header 'Content-Type: application/json'  --data '{\n              \"attributes\": {}\n            }'\n        - lang:\
+          \ python\n          label: Python\n          source: >\n            import requests"
+  /group/{id}:
+    delete:
+      operationId: delete_group_id
+      tags:
+      - Group
+      summary: Delete group
+      description: Delete a group by ID
+      x-source: https://docs.blinkops.com/docs/api/groups/delete-group.md
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteGroupIdResponse'
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_group_id
+      tags:
+      - Group
+      summary: List group users
+      description: Returns a list of users belonging to a given group
+      x-source: https://docs.blinkops.com/docs/api/groups/list-group-users.md
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetGroupIdResponse'
+      x-evidence:
+        kind: documentation
+  /group/{id}/add_users:
+    post:
+      operationId: post_group_id_add_users
+      tags:
+      - Group
+      summary: Add users to group
+      description: Add one or more users to a group by group ID
+      x-source: https://docs.blinkops.com/docs/api/groups/add-users-to-group.md
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostGroupIdAddUsersRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostGroupIdAddUsersResponse'
+      x-evidence:
+        kind: documentation
+  /group/{id}/remove_users:
+    post:
+      operationId: post_group_id_remove_users
+      tags:
+      - Group
+      summary: Remove users from group
+      description: Remove one or more users from a group by group ID
+      x-source: https://docs.blinkops.com/docs/api/groups/remove-users-from-group.md
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostGroupIdRemoveUsersRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostGroupIdRemoveUsersResponse'
+      x-evidence:
+        kind: documentation
+  /playbooks/{id}/portal_share:
+    post:
+      operationId: post_playbooks_id_portal_share
+      tags:
+      - Playbooks
+      summary: Share portal app
+      description: Share portal app with other users or groups
+      x-source: https://docs.blinkops.com/docs/api/workflows/share-portal-app.md
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPlaybooksIdPortalShareResponse'
+      x-evidence:
+        kind: documentation
+  /playbooks/{id}/portal_unshare:
+    post:
+      operationId: post_playbooks_id_portal_unshare
+      tags:
+      - Playbooks
+      summary: Un-share portal app
+      description: Un-share portal app with other users or groups
+      x-source: https://docs.blinkops.com/docs/api/workflows/un-share-portal-app.md
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPlaybooksIdPortalUnshareResponse'
+      x-evidence:
+        kind: documentation
+  /tenant/roles:
+    get:
+      operationId: get_tenant_roles
+      tags:
+      - Tenant
+      summary: List all available roles
+      description: Retrieves a paginated list of all roles defined in the tenant. Supports filtering and sorting via the RQL query parameter.
+      x-source: https://docs.blinkops.com/docs/api/roles/list-all-available-roles.md
+      parameters:
+      - name: q
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Optional. An RQL query, passed as a JSON object, to filter, sort, select fields, and page through results. See RQL. Example:
+          `{"limit":10,"offset":0}`'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTenantRolesResponse'
+      x-evidence:
+        kind: documentation
+  /user/{id}/groups:
+    delete:
+      operationId: delete_user_id_groups
+      tags:
+      - User
+      summary: Remove a user from groups
+      description: Removes a user from one or more groups. The user cannot be removed from the tenant-wide "All Users" group.
+      x-source: https://docs.blinkops.com/docs/api/users/remove-a-user-from-groups.md
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteUserIdGroupsResponse'
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_user_id_groups
+      tags:
+      - User
+      summary: Get groups of user
+      description: Get a paginated list of groups the user is a member of
+      x-source: https://docs.blinkops.com/docs/api/users/get-groups-of-user.md
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUserIdGroupsResponse'
+      x-evidence:
+        kind: documentation
+  /workspace/{wsId}/case_management/table/alerts:
+    post:
+      operationId: post_workspace_wsId_case_management_table_alerts
+      tags:
+      - Workspace
+      summary: Create an Alert
+      x-source: https://docs.blinkops.com/docs/api/case-management/create-an-alert.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostWorkspaceWsidCaseManagementTableAlertsRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostWorkspaceWsidCaseManagementTableAlertsResponse'
+      x-evidence:
+        kind: documentation
+  /workspace/{wsId}/case_management/table/alerts/{alertId}:
+    put:
+      operationId: put_workspace_wsId_case_management_table_alerts_alertId
+      tags:
+      - Workspace
+      summary: Update an Alert
+      description: Updates an alert record.
+      x-source: https://docs.blinkops.com/docs/api/case-management/update-an-alert.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: alertId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutWorkspaceWsidCaseManagementTableAlertsAlertidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutWorkspaceWsidCaseManagementTableAlertsAlertidResponse'
+      x-evidence:
+        kind: documentation
+  /workspace/{wsId}/case_management/table/cases:
+    post:
+      operationId: post_workspace_wsId_case_management_table_cases
+      tags:
+      - Workspace
+      summary: Create a Case
+      description: Adds a new Case record.
+      x-source: https://docs.blinkops.com/docs/api/case-management/create-a-case.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostWorkspaceWsidCaseManagementTableCasesRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostWorkspaceWsidCaseManagementTableCasesResponse'
+      x-evidence:
+        kind: documentation
+  /workspace/{wsId}/case_management/table/cases/{caseId}:
+    put:
+      operationId: put_workspace_wsId_case_management_table_cases_caseId
+      tags:
+      - Workspace
+      summary: Update a Case
+      description: Updates a case record.
+      x-source: https://docs.blinkops.com/docs/api/case-management/update-a-case.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: caseId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutWorkspaceWsidCaseManagementTableCasesCaseidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutWorkspaceWsidCaseManagementTableCasesCaseidResponse'
+      x-evidence:
+        kind: documentation
+  /workspace/{wsId}/case_management/table/tasks:
+    post:
+      operationId: post_workspace_wsId_case_management_table_tasks
+      tags:
+      - Workspace
+      summary: Create a Task
+      x-source: https://docs.blinkops.com/docs/api/case-management/create-a-task.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostWorkspaceWsidCaseManagementTableTasksRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostWorkspaceWsidCaseManagementTableTasksResponse'
+      x-evidence:
+        kind: documentation
+  /workspace/{wsId}/case_management/table/tasks/{taskId}:
+    put:
+      operationId: put_workspace_wsId_case_management_table_tasks_taskId
+      tags:
+      - Workspace
+      summary: Update a Task
+      x-source: https://docs.blinkops.com/docs/api/case-management/update-a-task.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutWorkspaceWsidCaseManagementTableTasksTaskidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutWorkspaceWsidCaseManagementTableTasksTaskidResponse'
+      x-evidence:
+        kind: documentation
+  /workspace/{wsId}/connections:
+    get:
+      operationId: get_workspace_wsId_connections
+      tags:
+      - Workspace
+      summary: List connections
+      description: Returns a list of connections by a filter
+      x-source: https://docs.blinkops.com/docs/api/connections/list-connections.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: q
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Optional. An RQL query, passed as a JSON object, to filter, sort, select fields, and page through results. See RQL. Example:
+          `{"select":["name","id"],"limit":10,"offset":0}`'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetWorkspaceWsidConnectionsResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_workspace_wsId_connections
+      tags:
+      - Workspace
+      summary: Create connection
+      x-source: https://docs.blinkops.com/docs/api/connections/create-connection.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostWorkspaceWsidConnectionsRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostWorkspaceWsidConnectionsResponse'
+      x-evidence:
+        kind: documentation
+  /workspace/{wsId}/connections/{id}:
+    delete:
+      operationId: delete_workspace_wsId_connections_id
+      tags:
+      - Workspace
+      summary: Delete Connection
+      description: Deletes a Connection
+      x-source: https://docs.blinkops.com/docs/api/connections/delete-connection.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteWorkspaceWsidConnectionsIdResponse'
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_workspace_wsId_connections_id
+      tags:
+      - Workspace
+      summary: Edit connection
+      description: Edit an existing Connection
+      x-source: https://docs.blinkops.com/docs/api/connections/edit-connection.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutWorkspaceWsidConnectionsIdRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutWorkspaceWsidConnectionsIdResponse'
+      x-evidence:
+        kind: documentation
+  /workspace/{wsId}/playbooks:
+    post:
+      operationId: post_workspace_wsId_playbooks
+      tags:
+      - Workspace
+      summary: Create a new playbook
+      description: Creates a new playbook in the specified workspace and immediately publishes it.
+      x-source: https://docs.blinkops.com/docs/api/workflows/create-a-new-playbook.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: playbook_content_url
+        in: query
+        required: false
+        schema:
+          type: string
+        description: URL to a remote YAML file — currently disabled; providing this returns 400
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostWorkspaceWsidPlaybooksRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostWorkspaceWsidPlaybooksResponse'
+      x-evidence:
+        kind: documentation
+  /workspace/{wsId}/playbooks/{id}/edit:
+    put:
+      operationId: put_workspace_wsId_playbooks_id_edit
+      tags:
+      - Workspace
+      summary: Edit playbook metadata
+      description: Updates the name, description, tags, and runner of the playbook with the given ID. Updating the runner requires the ViewAction
+        permission on RunnerObject.
+      x-source: https://docs.blinkops.com/docs/api/workflows/edit-playbook-metadata.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutWorkspaceWsidPlaybooksIdEditRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutWorkspaceWsidPlaybooksIdEditResponse'
+      x-evidence:
+        kind: documentation
+  /workspace/{wsId}/playbooks/{id}/execute:
+    post:
+      operationId: post_workspace_wsId_playbooks_id_execute
+      tags:
+      - Workspace
+      summary: Execute a playbook
+      description: 'Starts execution of the specified playbook. By default, the execution runs asynchronously and returns the execution ID immediately.
+        Use the `run_sync` parameter to wait for the execution to complete and return the output directly. **Note**: When running synchronously,
+        the request will block until the playbook completes or times out.'
+      x-source: https://docs.blinkops.com/docs/api/workflows/execute-a-playbook.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: run_sync
+        in: query
+        required: false
+        schema:
+          type: string
+        description: When set to true, runs the playbook synchronously and returns the execution output instead of the execution ID. The request
+          blocks until the workflow completes or times out
+      - name: timeout
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of seconds to wait for completion when running synchronously. Only applicable when `run_sync` is true
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostWorkspaceWsidPlaybooksIdExecuteRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostWorkspaceWsidPlaybooksIdExecuteResponse'
+      x-evidence:
+        kind: documentation
+  /workspace/{wsId}/table/sys_groups:
+    post:
+      operationId: post_workspace_wsId_table_sys_groups
+      tags:
+      - Workspace
+      summary: Create group
+      description: Create a new group
+      x-source: https://docs.blinkops.com/docs/api/groups/create-group.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostWorkspaceWsidTableSysGroupsRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostWorkspaceWsidTableSysGroupsResponse'
+      x-evidence:
+        kind: documentation
+  /workspace/{wsId}/table/{table}:
+    get:
+      operationId: get_workspace_wsId_table_table
+      tags:
+      - Workspace
+      summary: List Records from Table
+      description: Retrieve a list of records from a given table.
+      x-source: https://docs.blinkops.com/docs/api/tables/list-records-from-table.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: table
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: user_table
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Flag to indicate user table
+      - name: q
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Optional. An RQL query, passed as a JSON object, to filter, sort, select fields, and page through results. See RQL. Example:
+          {"limit":10,"offset":0}'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetWorkspaceWsidTableTableResponse'
+      x-evidence:
+        kind: documentation
+  /workspace/{wsId}/table/{table}/fields/{field}:
+    put:
+      operationId: put_workspace_wsId_table_table_fields_field
+      tags:
+      - Workspace
+      summary: Updates Field for Table
+      description: Update a specific field in a given table.
+      x-source: https://docs.blinkops.com/docs/api/tables/updates-field-for-table.md
+      parameters:
+      - name: wsId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: table
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: field
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutWorkspaceWsidTableTableFieldsFieldRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutWorkspaceWsidTableTableFieldsFieldResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PutRequest:
+      type: object
+      properties:
+        attributes:
+          type: object
+    DeleteGroupIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: OK
+        '400':
+          type: string
+          description: Invalid group ID
+        '500':
+          type: string
+          description: Internal server error
+    GetGroupIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: OK
+        '400':
+          type: string
+          description: Invalid group ID
+        '500':
+          type: string
+          description: Internal server error
+    PostGroupIdAddUsersRequest:
+      type: object
+      properties:
+        users:
+          type: array
+          description: List of user IDs to add
+      required:
+      - users
+    PostGroupIdAddUsersResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: OK
+        '400':
+          type: string
+          description: Invalid group ID or user already in group
+        '500':
+          type: string
+          description: Internal server error
+    PostGroupIdRemoveUsersRequest:
+      type: object
+      properties:
+        users:
+          type: array
+          description: List of user IDs to remove
+      required:
+      - users
+    PostGroupIdRemoveUsersResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: OK
+        '400':
+          type: string
+          description: Invalid group ID or request body
+        '500':
+          type: string
+          description: Internal server error
+    PostPlaybooksIdPortalShareResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: OK
+        '400':
+          type: string
+          description: failed to share portal app
+    PostPlaybooksIdPortalUnshareResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: OK
+        '400':
+          type: string
+          description: failed to unshare portal app
+    GetTenantRolesResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Paginated list of roles
+        '500':
+          type: string
+          description: Failed to retrieve roles
+    DeleteUserIdGroupsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: OK
+        '400':
+          type: string
+          description: Invalid user ID or request body
+        '403':
+          type: string
+          description: Insufficient permissions
+        '500':
+          type: string
+          description: Internal server error
+    GetUserIdGroupsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: OK
+        '400':
+          type: string
+          description: Invalid user ID or request parameters
+        '500':
+          type: string
+          description: Internal server error
+    PostWorkspaceWsidCaseManagementTableAlertsRequest:
+      type: object
+      properties:
+        description:
+          type: string
+          description: Alert description
+        event:
+          type: string
+          description: Event data as JSON string
+        name:
+          type: string
+          description: Alert name
+        processing_status:
+          type: string
+          description: Processing status
+        severity:
+          type: integer
+          description: Severity level
+        type:
+          type: string
+          description: Alert type
+        vendor:
+          type: string
+          description: Vendor name
+    PostWorkspaceWsidCaseManagementTableAlertsResponse:
+      type: object
+      properties:
+        description:
+          type: string
+        event:
+          type: string
+        name:
+          type: string
+        processing_status:
+          type: string
+        severity:
+          type: integer
+        type:
+          type: string
+        vendor:
+          type: string
+    PutWorkspaceWsidCaseManagementTableAlertsAlertidRequest:
+      type: object
+      properties:
+        description:
+          type: string
+          description: Alert description
+        event:
+          type: string
+          description: Event data as JSON string
+        name:
+          type: string
+          description: Alert name
+        processing_status:
+          type: string
+          description: Processing status
+        severity:
+          type: integer
+          description: Severity level
+        type:
+          type: string
+          description: Alert type
+        vendor:
+          type: string
+          description: Vendor name
+    PutWorkspaceWsidCaseManagementTableAlertsAlertidResponse:
+      type: object
+      properties:
+        description:
+          type: string
+        event:
+          type: string
+        name:
+          type: string
+        processing_status:
+          type: string
+        severity:
+          type: integer
+        type:
+          type: string
+        vendor:
+          type: string
+    PostWorkspaceWsidCaseManagementTableCasesRequest:
+      type: object
+      properties:
+        case_manager:
+          type: array
+        case_tags:
+          type: array
+        mitre_attack:
+          type: array
+        name:
+          type: string
+        overview:
+          type: string
+        severity:
+          type: integer
+        sla:
+          type: integer
+        sla_expiry:
+          type: integer
+        status:
+          type: string
+        summary:
+          type: string
+        type:
+          type: string
+        vendors:
+          type: array
+    PostWorkspaceWsidCaseManagementTableCasesResponse:
+      type: object
+      properties:
+        case_manager:
+          type: array
+        case_tags:
+          type: array
+        mitre_attack:
+          type: array
+        name:
+          type: string
+        overview:
+          type: string
+        severity:
+          type: integer
+        sla:
+          type: integer
+        sla_expiry:
+          type: integer
+        status:
+          type: string
+        summary:
+          type: string
+        type:
+          type: string
+        vendors:
+          type: array
+    PutWorkspaceWsidCaseManagementTableCasesCaseidRequest:
+      type: object
+      properties:
+        case_manager:
+          type: array
+        case_tags:
+          type: array
+        mitre_attack:
+          type: array
+        name:
+          type: string
+        overview:
+          type: string
+        severity:
+          type: integer
+        sla:
+          type: integer
+        sla_expiry:
+          type: integer
+        status:
+          type: string
+        summary:
+          type: string
+        type:
+          type: string
+        vendors:
+          type: array
+    PutWorkspaceWsidCaseManagementTableCasesCaseidResponse:
+      type: object
+      properties:
+        case_manager:
+          type: array
+        case_tags:
+          type: array
+        mitre_attack:
+          type: array
+        name:
+          type: string
+        overview:
+          type: string
+        severity:
+          type: integer
+        sla:
+          type: integer
+        sla_expiry:
+          type: integer
+        status:
+          type: string
+        summary:
+          type: string
+        type:
+          type: string
+        vendors:
+          type: array
+    PostWorkspaceWsidCaseManagementTableTasksRequest:
+      type: object
+      properties:
+        assigned_to:
+          type: array
+        description:
+          type: string
+        due_date:
+          type: string
+        is_blocking:
+          type: boolean
+        name:
+          type: string
+        priority:
+          type: integer
+        status:
+          type: string
+        type:
+          type: string
+    PostWorkspaceWsidCaseManagementTableTasksResponse:
+      type: object
+      properties:
+        assigned_to:
+          type: array
+        description:
+          type: string
+        due_date:
+          type: string
+        is_blocking:
+          type: boolean
+        name:
+          type: string
+        priority:
+          type: integer
+        status:
+          type: string
+        type:
+          type: string
+    PutWorkspaceWsidCaseManagementTableTasksTaskidRequest:
+      type: object
+      properties:
+        assigned_to:
+          type: array
+        description:
+          type: string
+        due_date:
+          type: string
+        is_blocking:
+          type: boolean
+        name:
+          type: string
+        priority:
+          type: integer
+        status:
+          type: string
+        type:
+          type: string
+    PutWorkspaceWsidCaseManagementTableTasksTaskidResponse:
+      type: object
+      properties:
+        assigned_to:
+          type: array
+        description:
+          type: string
+        due_date:
+          type: string
+        is_blocking:
+          type: boolean
+        name:
+          type: string
+        priority:
+          type: integer
+        status:
+          type: string
+        type:
+          type: string
+    GetWorkspaceWsidConnectionsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: ok
+        '400':
+          type: string
+          description: Can not retrieve the list of connections
+        '404':
+          type: string
+          description: Can not find Connections
+    PostWorkspaceWsidConnectionsRequest:
+      type: object
+      properties:
+        attributes:
+          type: object
+          description: Attributes of the connection
+        connection_type_id:
+          type: string
+          description: Connection type identifier
+        created_with_o_auth:
+          type: boolean
+          description: Whether created with OAuth
+        creation_method:
+          type: string
+          description: Method used to create the connection
+        name:
+          type: string
+          description: Name of the connection
+    PostWorkspaceWsidConnectionsResponse:
+      type: object
+      properties:
+        attributes:
+          type: object
+          description: Connection attributes
+        connection_type_id:
+          type: string
+        created_at:
+          type: integer
+        created_by:
+          type: string
+        created_with_o_auth:
+          type: boolean
+        creation_location:
+          type: string
+        creation_method:
+          type: string
+        description:
+          type: string
+        display_name:
+          type: string
+        external_id:
+          type: string
+          description: ExternalId mapping to external entity identifier associated with this connection (used on revoke/uninstall events e.g.)
+        full_name:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+          description: Connection names are unique per tenant as they are used in playbook YAML
+        secret_manager:
+          type: string
+        status:
+          type: string
+        tenant_id:
+          type: string
+        updated_at:
+          type: integer
+        updated_by:
+          type: string
+        workspace_id:
+          type: string
+    DeleteWorkspaceWsidConnectionsIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: connection id
+        '400':
+          type: string
+          description: Cannot delete Connection
+    PutWorkspaceWsidConnectionsIdRequest:
+      type: object
+      properties:
+        attributes:
+          type: object
+          description: Attributes to edit
+    PutWorkspaceWsidConnectionsIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: connection id
+        '400':
+          type: object
+          description: Cannot edit Connection
+    PostWorkspaceWsidPlaybooksRequest:
+      type: object
+      properties:
+        Playbook definition to create:
+          type: object
+          description: Playbook definition to create
+      required:
+      - Playbook definition to create
+    PostWorkspaceWsidPlaybooksResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Created playbook
+        '400':
+          type: string
+          description: Invalid request body or creation failed
+        '401':
+          type: string
+          description: Unauthorized
+        '403':
+          type: string
+          description: Forbidden
+        '500':
+          type: string
+          description: Internal server error (e.g. publish step failed)
+    PutWorkspaceWsidPlaybooksIdEditRequest:
+      type: object
+      properties:
+        active:
+          type: boolean
+        analyst_copilot_workflow:
+          type: boolean
+        custom_timeout:
+          type: integer
+        desc:
+          type: string
+        icon:
+          type: string
+        is_request:
+          type: boolean
+        max_concurrency_level:
+          type: integer
+        name:
+          type: string
+        notification_emails:
+          type: string
+        playbook_to_run_on_error:
+          type: string
+        preferred_engine_version:
+          type: string
+        runner:
+          type: string
+        step_transition_limit:
+          type: integer
+        tags:
+          type: array
+          description: Array of strings
+    PutWorkspaceWsidPlaybooksIdEditResponse:
+      type: object
+      properties:
+        active:
+          type: boolean
+        analyst_copilot_workflow:
+          type: boolean
+        custom_timeout:
+          type: integer
+        desc:
+          type: string
+        icon:
+          type: string
+        is_request:
+          type: boolean
+        max_concurrency_level:
+          type: integer
+        name:
+          type: string
+        notification_emails:
+          type: string
+        playbook_to_run_on_error:
+          type: string
+        preferred_engine_version:
+          type: string
+        runner:
+          type: string
+        step_transition_limit:
+          type: integer
+        tags:
+          type: array
+          description: Array of strings
+    PostWorkspaceWsidPlaybooksIdExecuteRequest:
+      type: object
+      properties:
+        callback:
+          type: string
+          description: Callback configuration for the execution
+        event:
+          type: string
+          description: The data that is used on an event-based workflow
+        input_values:
+          type: string
+          description: Input parameters that will be used by the workflow
+        past_exec_ref:
+          type: string
+          description: The ID of a previous execution, used when rerunning
+        runner:
+          type: string
+          description: The runner group that will run the workflow
+        trigger_type:
+          type: string
+          description: The type of the trigger of the workflow
+    PostWorkspaceWsidPlaybooksIdExecuteResponse:
+      type: object
+      properties:
+        execution_id:
+          type: string
+          description: The ID of the created execution
+    PostWorkspaceWsidTableSysGroupsRequest:
+      type: object
+      properties:
+        description:
+          type: string
+        managed:
+          type: boolean
+        name:
+          type: string
+    PostWorkspaceWsidTableSysGroupsResponse:
+      type: object
+      properties:
+        '200':
+          type: object
+          description: OK
+        '400':
+          type: object
+          description: Failed to create group
+    GetWorkspaceWsidTableTableResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: OK
+        '400':
+          type: string
+          description: Failed to list records
+        '404':
+          type: string
+          description: Can not find record
+    PutWorkspaceWsidTableTableFieldsFieldRequest:
+      type: object
+      properties:
+        attributes:
+          type: object
+          description: See tables.UpdateTableFieldSettingsAttributes
+        display_name:
+          type: string
+          description: Display name of the field
+        type:
+          type: string
+          description: Field type (e.g., single-select)
+    PutWorkspaceWsidTableTableFieldsFieldResponse:
+      type: object
+      properties:
+        '200':
+          type: object
+          description: OK – See models.TableField
+        '400':
+          type: object
+          description: Failed to update field – See api_responses.ErrorWrapper
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: BLINK-API-KEY
+security:
+- apiKey: []
+tags:
+- name: Api
+- name: Group
+- name: Playbooks
+- name: Tenant
+- name: User
+- name: Workspace

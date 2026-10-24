@@ -1,0 +1,252 @@
+generated: '2026-10-24'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/blinkops-com-openapi-generated.yml
+vocabulary:
+  name: Blink Domain Vocabulary
+  description: 'Terms declared by Blink''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-24'
+  terms:
+  - term: PutRequest
+    definition: 'Object declared by the contract with fields: attributes.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PutRequest
+  - term: DeleteGroupIdResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/DeleteGroupIdResponse
+  - term: GetGroupIdResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/GetGroupIdResponse
+  - term: PostGroupIdAddUsersRequest
+    definition: 'Object declared by the contract with fields: users.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostGroupIdAddUsersRequest
+  - term: PostGroupIdAddUsersResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostGroupIdAddUsersResponse
+  - term: PostGroupIdRemoveUsersRequest
+    definition: 'Object declared by the contract with fields: users.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostGroupIdRemoveUsersRequest
+  - term: PostGroupIdRemoveUsersResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostGroupIdRemoveUsersResponse
+  - term: PostPlaybooksIdPortalShareResponse
+    definition: 'Object declared by the contract with fields: 200, 400.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostPlaybooksIdPortalShareResponse
+  - term: PostPlaybooksIdPortalUnshareResponse
+    definition: 'Object declared by the contract with fields: 200, 400.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostPlaybooksIdPortalUnshareResponse
+  - term: GetTenantRolesResponse
+    definition: 'Object declared by the contract with fields: 200, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/GetTenantRolesResponse
+  - term: DeleteUserIdGroupsResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 403, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/DeleteUserIdGroupsResponse
+  - term: GetUserIdGroupsResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/GetUserIdGroupsResponse
+  - term: PostWorkspaceWsidCaseManagementTableAlertsRequest
+    definition: 'Object declared by the contract with fields: description, event, name, processing_status, severity, type, vendor.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidCaseManagementTableAlertsRequest
+  - term: PostWorkspaceWsidCaseManagementTableAlertsResponse
+    definition: 'Object declared by the contract with fields: description, event, name, processing_status, severity, type, vendor.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidCaseManagementTableAlertsResponse
+  - term: PutWorkspaceWsidCaseManagementTableAlertsAlertidRequest
+    definition: 'Object declared by the contract with fields: description, event, name, processing_status, severity, type, vendor.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PutWorkspaceWsidCaseManagementTableAlertsAlertidRequest
+  - term: PutWorkspaceWsidCaseManagementTableAlertsAlertidResponse
+    definition: 'Object declared by the contract with fields: description, event, name, processing_status, severity, type, vendor.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PutWorkspaceWsidCaseManagementTableAlertsAlertidResponse
+  - term: PostWorkspaceWsidCaseManagementTableCasesRequest
+    definition: 'Object declared by the contract with fields: case_manager, case_tags, mitre_attack, name, overview, severity, sla, sla_expiry,
+      status, summary, type, vendors.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidCaseManagementTableCasesRequest
+  - term: PostWorkspaceWsidCaseManagementTableCasesResponse
+    definition: 'Object declared by the contract with fields: case_manager, case_tags, mitre_attack, name, overview, severity, sla, sla_expiry,
+      status, summary, type, vendors.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidCaseManagementTableCasesResponse
+  - term: PutWorkspaceWsidCaseManagementTableCasesCaseidRequest
+    definition: 'Object declared by the contract with fields: case_manager, case_tags, mitre_attack, name, overview, severity, sla, sla_expiry,
+      status, summary, type, vendors.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PutWorkspaceWsidCaseManagementTableCasesCaseidRequest
+  - term: PutWorkspaceWsidCaseManagementTableCasesCaseidResponse
+    definition: 'Object declared by the contract with fields: case_manager, case_tags, mitre_attack, name, overview, severity, sla, sla_expiry,
+      status, summary, type, vendors.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PutWorkspaceWsidCaseManagementTableCasesCaseidResponse
+  - term: PostWorkspaceWsidCaseManagementTableTasksRequest
+    definition: 'Object declared by the contract with fields: assigned_to, description, due_date, is_blocking, name, priority, status, type.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidCaseManagementTableTasksRequest
+  - term: PostWorkspaceWsidCaseManagementTableTasksResponse
+    definition: 'Object declared by the contract with fields: assigned_to, description, due_date, is_blocking, name, priority, status, type.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidCaseManagementTableTasksResponse
+  - term: PutWorkspaceWsidCaseManagementTableTasksTaskidRequest
+    definition: 'Object declared by the contract with fields: assigned_to, description, due_date, is_blocking, name, priority, status, type.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PutWorkspaceWsidCaseManagementTableTasksTaskidRequest
+  - term: PutWorkspaceWsidCaseManagementTableTasksTaskidResponse
+    definition: 'Object declared by the contract with fields: assigned_to, description, due_date, is_blocking, name, priority, status, type.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PutWorkspaceWsidCaseManagementTableTasksTaskidResponse
+  - term: GetWorkspaceWsidConnectionsResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 404.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/GetWorkspaceWsidConnectionsResponse
+  - term: PostWorkspaceWsidConnectionsRequest
+    definition: 'Object declared by the contract with fields: attributes, connection_type_id, created_with_o_auth, creation_method, name.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidConnectionsRequest
+  - term: PostWorkspaceWsidConnectionsResponse
+    definition: 'Object declared by the contract with fields: attributes, connection_type_id, created_at, created_by, created_with_o_auth, creation_location,
+      creation_method, description, display_name, external_id, full_name, id. (7 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidConnectionsResponse
+  - term: DeleteWorkspaceWsidConnectionsIdResponse
+    definition: 'Object declared by the contract with fields: 200, 400.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/DeleteWorkspaceWsidConnectionsIdResponse
+  - term: PutWorkspaceWsidConnectionsIdRequest
+    definition: 'Object declared by the contract with fields: attributes.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PutWorkspaceWsidConnectionsIdRequest
+  - term: PutWorkspaceWsidConnectionsIdResponse
+    definition: 'Object declared by the contract with fields: 200, 400.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PutWorkspaceWsidConnectionsIdResponse
+  - term: PostWorkspaceWsidPlaybooksRequest
+    definition: 'Object declared by the contract with fields: Playbook definition to create.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidPlaybooksRequest
+  - term: PostWorkspaceWsidPlaybooksResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 401, 403, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidPlaybooksResponse
+  - term: PutWorkspaceWsidPlaybooksIdEditRequest
+    definition: 'Object declared by the contract with fields: active, analyst_copilot_workflow, custom_timeout, desc, icon, is_request, max_concurrency_level,
+      name, notification_emails, playbook_to_run_on_error, preferred_engine_version, runner. (2 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PutWorkspaceWsidPlaybooksIdEditRequest
+  - term: PutWorkspaceWsidPlaybooksIdEditResponse
+    definition: 'Object declared by the contract with fields: active, analyst_copilot_workflow, custom_timeout, desc, icon, is_request, max_concurrency_level,
+      name, notification_emails, playbook_to_run_on_error, preferred_engine_version, runner. (2 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PutWorkspaceWsidPlaybooksIdEditResponse
+  - term: PostWorkspaceWsidPlaybooksIdExecuteRequest
+    definition: 'Object declared by the contract with fields: callback, event, input_values, past_exec_ref, runner, trigger_type.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidPlaybooksIdExecuteRequest
+  - term: PostWorkspaceWsidPlaybooksIdExecuteResponse
+    definition: 'Object declared by the contract with fields: execution_id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidPlaybooksIdExecuteResponse
+  - term: PostWorkspaceWsidTableSysGroupsRequest
+    definition: 'Object declared by the contract with fields: description, managed, name.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidTableSysGroupsRequest
+  - term: PostWorkspaceWsidTableSysGroupsResponse
+    definition: 'Object declared by the contract with fields: 200, 400.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidTableSysGroupsResponse
+  - term: GetWorkspaceWsidTableTableResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 404.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/GetWorkspaceWsidTableTableResponse
+  - term: PutWorkspaceWsidTableTableFieldsFieldRequest
+    definition: 'Object declared by the contract with fields: attributes, display_name, type.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PutWorkspaceWsidTableTableFieldsFieldRequest
+  - term: PutWorkspaceWsidTableTableFieldsFieldResponse
+    definition: 'Object declared by the contract with fields: 200, 400.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PutWorkspaceWsidTableTableFieldsFieldResponse
+  - term: Api
+    definition: 'Resource group in the contract; its operation DELETE /: DELETE /'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml
+  - term: Group
+    definition: 'Resource group in the contract; its operation DELETE /group/{id}: Delete a group by ID'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml
+  - term: Playbooks
+    definition: 'Resource group in the contract; its operation POST /playbooks/{id}/portal_share: Share portal app with other users or groups'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml
+  - term: Tenant
+    definition: 'Resource group in the contract; its operation GET /tenant/roles: Retrieves a paginated list of all roles defined in the tenant.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml
+  - term: User
+    definition: 'Resource group in the contract; its operation DELETE /user/{id}/groups: Removes a user from one or more groups.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml
+  - term: Workspace
+    definition: 'Resource group in the contract; its operation POST /workspace/{wsId}/case_management/table/alerts: Create an Alert'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blinkops-com-openapi-generated.yml

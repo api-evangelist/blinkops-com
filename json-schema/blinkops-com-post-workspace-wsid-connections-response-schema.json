@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/blinkops-com/main/json-schema/blinkops-com-post-workspace-wsid-connections-response-schema.json",
+  "title": "PostWorkspaceWsidConnectionsResponse",
+  "x-generated": "2026-10-24",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidConnectionsResponse",
+  "type": "object",
+  "properties": {
+    "attributes": {
+      "type": "object",
+      "description": "Connection attributes"
+    },
+    "connection_type_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "integer"
+    },
+    "created_by": {
+      "type": "string"
+    },
+    "created_with_o_auth": {
+      "type": "boolean"
+    },
+    "creation_location": {
+      "type": "string"
+    },
+    "creation_method": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "external_id": {
+      "type": "string",
+      "description": "ExternalId mapping to external entity identifier associated with this connection (used on revoke/uninstall events e.g.)"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "description": "Connection names are unique per tenant as they are used in playbook YAML"
+    },
+    "secret_manager": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "integer"
+    },
+    "updated_by": {
+      "type": "string"
+    },
+    "workspace_id": {
+      "type": "string"
+    }
+  }
+}

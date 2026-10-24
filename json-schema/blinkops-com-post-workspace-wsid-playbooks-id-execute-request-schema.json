@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/blinkops-com/main/json-schema/blinkops-com-post-workspace-wsid-playbooks-id-execute-request-schema.json",
+  "title": "PostWorkspaceWsidPlaybooksIdExecuteRequest",
+  "x-generated": "2026-10-24",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidPlaybooksIdExecuteRequest",
+  "type": "object",
+  "properties": {
+    "callback": {
+      "type": "string",
+      "description": "Callback configuration for the execution"
+    },
+    "event": {
+      "type": "string",
+      "description": "The data that is used on an event-based workflow"
+    },
+    "input_values": {
+      "type": "string",
+      "description": "Input parameters that will be used by the workflow"
+    },
+    "past_exec_ref": {
+      "type": "string",
+      "description": "The ID of a previous execution, used when rerunning"
+    },
+    "runner": {
+      "type": "string",
+      "description": "The runner group that will run the workflow"
+    },
+    "trigger_type": {
+      "type": "string",
+      "description": "The type of the trigger of the workflow"
+    }
+  }
+}

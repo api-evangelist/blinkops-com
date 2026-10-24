@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/blinkops-com/main/json-schema/blinkops-com-put-workspace-wsid-playbooks-id-edit-response-schema.json",
+  "title": "PutWorkspaceWsidPlaybooksIdEditResponse",
+  "x-generated": "2026-10-24",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PutWorkspaceWsidPlaybooksIdEditResponse",
+  "type": "object",
+  "properties": {
+    "active": {
+      "type": "boolean"
+    },
+    "analyst_copilot_workflow": {
+      "type": "boolean"
+    },
+    "custom_timeout": {
+      "type": "integer"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "is_request": {
+      "type": "boolean"
+    },
+    "max_concurrency_level": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "notification_emails": {
+      "type": "string"
+    },
+    "playbook_to_run_on_error": {
+      "type": "string"
+    },
+    "preferred_engine_version": {
+      "type": "string"
+    },
+    "runner": {
+      "type": "string"
+    },
+    "step_transition_limit": {
+      "type": "integer"
+    },
+    "tags": {
+      "type": "array",
+      "description": "Array of strings"
+    }
+  }
+}

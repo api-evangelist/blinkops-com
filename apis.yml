@@ -1,25 +1,115 @@
 aid: blinkops-com
+
 name: Blink
-description: 'Blink is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by lightspeed-venture-partners) and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Blink is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio; backed by lightspeed-venture-partners)
+  and added to the network as a stub for full-pipeline profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/blinkops-com/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-24 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-24'
+
 modified: '2026-10-24'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- lightspeed-venture-partners
+
 common:
+- type: WellKnown
+  url: well-known/blinkops-com-well-known.yml
+- type: Spectral
+  url: rules/blinkops-com-rules.yml
+- type: JSONLD
+  url: json-ld/blinkops-com-context.jsonld
+- type: Vocabulary
+  url: vocabulary/blinkops-com-vocabulary.yml
+- type: DataModel
+  url: data-model/blinkops-com-data-model.yml
+- type: Compliance
+  url: https://trust.blinkops.com/
+- type: Conformance
+  url: conformance/blinkops-com-conformance.yml
+- type: LLMsTxt
+  url: llms/blinkops-com-llms.txt
+- type: AgentCard
+  url: a2a/blinkops-com-a2a.yml
+- type: Hosts
+  url: hosts/blinkops-com-hosts.yml
+- type: Vendors
+  url: vendors/blinkops-com-vendors.yml
+- type: GettingStarted
+  url: https://docs.blinkops.com/docs/getting-started/introduction
+- type: Documentation
+  url: https://docs.blinkops.com/
+- type: APIReference
+  url: https://docs.blinkops.com/llms.txt
+- type: GitHubOrganization
+  url: https://github.com/blinkops
+- type: TrustCenter
+  url: security/blinkops-com-trust-center.yml
+- type: DomainSecurity
+  url: security/blinkops-com-domain-security.yml
 - type: Website
   url: https://blinkops.com
+
+apis:
+- aid: blinkops-com:blinkops-com-api
+  name: Blink API
+  description: 'Blink API as documented publicly: 29 operations. Contract generated from the documentation by API Evangelist (2026-10-24); not
+    the provider''s own document.'
+  humanURL: https://docs.blinkops.com/docs/api/rql.md
+  baseURL: https://<your-tenant>.app.blinkops.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/blinkops-com-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/blinkops-com-post-workspace-wsid-connections-response-schema.json
+  - type: JSONSchema
+    url: json-schema/blinkops-com-post-workspace-wsid-playbooks-id-execute-request-schema.json
+  - type: JSONSchema
+    url: json-schema/blinkops-com-put-workspace-wsid-playbooks-id-edit-request-schema.json
+  - type: JSONSchema
+    url: json-schema/blinkops-com-put-workspace-wsid-playbooks-id-edit-response-schema.json
+  - type: JSONSchema
+    url: json-schema/blinkops-com-post-workspace-wsid-case-management-table-alerts-request-schema.json
+  - type: JSONSchema
+    url: json-schema/blinkops-com-put-workspace-wsid-case-management-table-alerts-alertid-request-schema.json
+
+x-backed-by:
+- lightspeed-venture-partners
+
+x-coverage:
+  state: blocked
+  reason: bot-challenge
+  method: derived
+  generated: '2026-10-24'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company's own front door answers a browser with an anti-bot challenge, so nothing behind it is reachable by any reader
+  evidence:
+  - url: https://docs.blinkops.com/mcp
+    status: null
+  - url: https://blinkops.com
+    status: 403
+x-enrichment:
+  date: '2026-10-24'
+  status: enriched
+  artifacts_added: 24
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

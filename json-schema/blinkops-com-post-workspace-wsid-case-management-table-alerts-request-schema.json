@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/blinkops-com/main/json-schema/blinkops-com-post-workspace-wsid-case-management-table-alerts-request-schema.json",
+  "title": "PostWorkspaceWsidCaseManagementTableAlertsRequest",
+  "x-generated": "2026-10-24",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/blinkops-com-openapi-generated.yml#/components/schemas/PostWorkspaceWsidCaseManagementTableAlertsRequest",
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "Alert description"
+    },
+    "event": {
+      "type": "string",
+      "description": "Event data as JSON string"
+    },
+    "name": {
+      "type": "string",
+      "description": "Alert name"
+    },
+    "processing_status": {
+      "type": "string",
+      "description": "Processing status"
+    },
+    "severity": {
+      "type": "integer",
+      "description": "Severity level"
+    },
+    "type": {
+      "type": "string",
+      "description": "Alert type"
+    },
+    "vendor": {
+      "type": "string",
+      "description": "Vendor name"
+    }
+  }
+}

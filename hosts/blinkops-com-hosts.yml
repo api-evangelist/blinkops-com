@@ -1,0 +1,92 @@
+generated: '2026-10-24'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 6
+  own: 5
+  other_domain: 0
+  platform: 1
+  roles:
+  - api
+  - docs
+  - other
+  - source
+  - website
+hosts:
+- host: <your-tenant>.app.blinkops.com
+  found_by:
+  - apis[]
+  - vendor-detect
+  types: []
+  serves:
+  - api
+  - cdn
+  vendor: cloudfront
+  registrable_domain: blinkops.com
+  role: other
+  relation: own
+- host: api.blinkops.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: blinkops.com
+  role: api
+  relation: own
+- host: blinkops.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  serves:
+  - cdn
+  vendor: cloudflare
+  registrable_domain: blinkops.com
+  role: website
+  relation: own
+- host: docs.blinkops.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - namespace-probe
+  - docs-index
+  - spec-found
+  - contract-discovery
+  - well-known
+  types:
+  - GettingStarted
+  - Documentation
+  - APIReference
+  serves:
+  - docs
+  - spec
+  title: Home - BlinkOps Documentation
+  status: 200
+  registrable_domain: blinkops.com
+  role: docs
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: trust.blinkops.com
+  found_by:
+  - pointer
+  types:
+  - Compliance
+  serves: []
+  registrable_domain: blinkops.com
+  role: other
+  relation: own

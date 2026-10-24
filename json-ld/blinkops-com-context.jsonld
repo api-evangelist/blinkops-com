@@ -1,0 +1,280 @@
+{
+  "@context": {
+    "@vocab": "https://blinkops.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "blinkops": "https://blinkops.com/schema#",
+    "PutRequest": "blinkops:PutRequest",
+    "attributes": {
+      "@id": "blinkops:attributes"
+    },
+    "DeleteGroupIdResponse": "blinkops:DeleteGroupIdResponse",
+    "GetGroupIdResponse": "blinkops:GetGroupIdResponse",
+    "PostGroupIdAddUsersRequest": "blinkops:PostGroupIdAddUsersRequest",
+    "users": {
+      "@id": "blinkops:users",
+      "@container": "@list"
+    },
+    "PostGroupIdAddUsersResponse": "blinkops:PostGroupIdAddUsersResponse",
+    "PostGroupIdRemoveUsersRequest": "blinkops:PostGroupIdRemoveUsersRequest",
+    "PostGroupIdRemoveUsersResponse": "blinkops:PostGroupIdRemoveUsersResponse",
+    "PostPlaybooksIdPortalShareResponse": "blinkops:PostPlaybooksIdPortalShareResponse",
+    "PostPlaybooksIdPortalUnshareResponse": "blinkops:PostPlaybooksIdPortalUnshareResponse",
+    "GetTenantRolesResponse": "blinkops:GetTenantRolesResponse",
+    "DeleteUserIdGroupsResponse": "blinkops:DeleteUserIdGroupsResponse",
+    "GetUserIdGroupsResponse": "blinkops:GetUserIdGroupsResponse",
+    "PostWorkspaceWsidCaseManagementTableAlertsRequest": "blinkops:PostWorkspaceWsidCaseManagementTableAlertsRequest",
+    "description": {
+      "@id": "blinkops:description",
+      "@type": "xsd:string"
+    },
+    "event": {
+      "@id": "blinkops:event",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "blinkops:name",
+      "@type": "xsd:string"
+    },
+    "processing_status": {
+      "@id": "blinkops:processing_status",
+      "@type": "xsd:string"
+    },
+    "severity": {
+      "@id": "blinkops:severity",
+      "@type": "xsd:integer"
+    },
+    "type": {
+      "@id": "blinkops:type",
+      "@type": "xsd:string"
+    },
+    "vendor": {
+      "@id": "blinkops:vendor",
+      "@type": "xsd:string"
+    },
+    "PostWorkspaceWsidCaseManagementTableAlertsResponse": "blinkops:PostWorkspaceWsidCaseManagementTableAlertsResponse",
+    "PutWorkspaceWsidCaseManagementTableAlertsAlertidRequest": "blinkops:PutWorkspaceWsidCaseManagementTableAlertsAlertidRequest",
+    "PutWorkspaceWsidCaseManagementTableAlertsAlertidResponse": "blinkops:PutWorkspaceWsidCaseManagementTableAlertsAlertidResponse",
+    "PostWorkspaceWsidCaseManagementTableCasesRequest": "blinkops:PostWorkspaceWsidCaseManagementTableCasesRequest",
+    "case_manager": {
+      "@id": "blinkops:case_manager",
+      "@container": "@list"
+    },
+    "case_tags": {
+      "@id": "blinkops:case_tags",
+      "@container": "@list"
+    },
+    "mitre_attack": {
+      "@id": "blinkops:mitre_attack",
+      "@container": "@list"
+    },
+    "overview": {
+      "@id": "blinkops:overview",
+      "@type": "xsd:string"
+    },
+    "sla": {
+      "@id": "blinkops:sla",
+      "@type": "xsd:integer"
+    },
+    "sla_expiry": {
+      "@id": "blinkops:sla_expiry",
+      "@type": "xsd:integer"
+    },
+    "status": {
+      "@id": "blinkops:status",
+      "@type": "xsd:string"
+    },
+    "summary": {
+      "@id": "blinkops:summary",
+      "@type": "xsd:string"
+    },
+    "vendors": {
+      "@id": "blinkops:vendors",
+      "@container": "@list"
+    },
+    "PostWorkspaceWsidCaseManagementTableCasesResponse": "blinkops:PostWorkspaceWsidCaseManagementTableCasesResponse",
+    "PutWorkspaceWsidCaseManagementTableCasesCaseidRequest": "blinkops:PutWorkspaceWsidCaseManagementTableCasesCaseidRequest",
+    "PutWorkspaceWsidCaseManagementTableCasesCaseidResponse": "blinkops:PutWorkspaceWsidCaseManagementTableCasesCaseidResponse",
+    "PostWorkspaceWsidCaseManagementTableTasksRequest": "blinkops:PostWorkspaceWsidCaseManagementTableTasksRequest",
+    "assigned_to": {
+      "@id": "blinkops:assigned_to",
+      "@container": "@list"
+    },
+    "due_date": {
+      "@id": "blinkops:due_date",
+      "@type": "xsd:string"
+    },
+    "is_blocking": {
+      "@id": "blinkops:is_blocking",
+      "@type": "xsd:boolean"
+    },
+    "priority": {
+      "@id": "blinkops:priority",
+      "@type": "xsd:integer"
+    },
+    "PostWorkspaceWsidCaseManagementTableTasksResponse": "blinkops:PostWorkspaceWsidCaseManagementTableTasksResponse",
+    "PutWorkspaceWsidCaseManagementTableTasksTaskidRequest": "blinkops:PutWorkspaceWsidCaseManagementTableTasksTaskidRequest",
+    "PutWorkspaceWsidCaseManagementTableTasksTaskidResponse": "blinkops:PutWorkspaceWsidCaseManagementTableTasksTaskidResponse",
+    "GetWorkspaceWsidConnectionsResponse": "blinkops:GetWorkspaceWsidConnectionsResponse",
+    "PostWorkspaceWsidConnectionsRequest": "blinkops:PostWorkspaceWsidConnectionsRequest",
+    "connection_type_id": {
+      "@id": "blinkops:connection_type_id",
+      "@type": "xsd:string"
+    },
+    "created_with_o_auth": {
+      "@id": "blinkops:created_with_o_auth",
+      "@type": "xsd:boolean"
+    },
+    "creation_method": {
+      "@id": "blinkops:creation_method",
+      "@type": "xsd:string"
+    },
+    "PostWorkspaceWsidConnectionsResponse": "blinkops:PostWorkspaceWsidConnectionsResponse",
+    "created_at": {
+      "@id": "blinkops:created_at",
+      "@type": "xsd:integer"
+    },
+    "created_by": {
+      "@id": "blinkops:created_by",
+      "@type": "xsd:string"
+    },
+    "creation_location": {
+      "@id": "blinkops:creation_location",
+      "@type": "xsd:string"
+    },
+    "display_name": {
+      "@id": "blinkops:display_name",
+      "@type": "xsd:string"
+    },
+    "external_id": {
+      "@id": "blinkops:external_id",
+      "@type": "xsd:string"
+    },
+    "full_name": {
+      "@id": "blinkops:full_name",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "blinkops:id",
+      "@type": "xsd:string"
+    },
+    "secret_manager": {
+      "@id": "blinkops:secret_manager",
+      "@type": "xsd:string"
+    },
+    "tenant_id": {
+      "@id": "blinkops:tenant_id",
+      "@type": "xsd:string"
+    },
+    "updated_at": {
+      "@id": "blinkops:updated_at",
+      "@type": "xsd:integer"
+    },
+    "updated_by": {
+      "@id": "blinkops:updated_by",
+      "@type": "xsd:string"
+    },
+    "workspace_id": {
+      "@id": "blinkops:workspace_id",
+      "@type": "xsd:string"
+    },
+    "DeleteWorkspaceWsidConnectionsIdResponse": "blinkops:DeleteWorkspaceWsidConnectionsIdResponse",
+    "PutWorkspaceWsidConnectionsIdRequest": "blinkops:PutWorkspaceWsidConnectionsIdRequest",
+    "PutWorkspaceWsidConnectionsIdResponse": "blinkops:PutWorkspaceWsidConnectionsIdResponse",
+    "PostWorkspaceWsidPlaybooksRequest": "blinkops:PostWorkspaceWsidPlaybooksRequest",
+    "PostWorkspaceWsidPlaybooksResponse": "blinkops:PostWorkspaceWsidPlaybooksResponse",
+    "PutWorkspaceWsidPlaybooksIdEditRequest": "blinkops:PutWorkspaceWsidPlaybooksIdEditRequest",
+    "active": {
+      "@id": "blinkops:active",
+      "@type": "xsd:boolean"
+    },
+    "analyst_copilot_workflow": {
+      "@id": "blinkops:analyst_copilot_workflow",
+      "@type": "xsd:boolean"
+    },
+    "custom_timeout": {
+      "@id": "blinkops:custom_timeout",
+      "@type": "xsd:integer"
+    },
+    "desc": {
+      "@id": "blinkops:desc",
+      "@type": "xsd:string"
+    },
+    "icon": {
+      "@id": "blinkops:icon",
+      "@type": "xsd:string"
+    },
+    "is_request": {
+      "@id": "blinkops:is_request",
+      "@type": "xsd:boolean"
+    },
+    "max_concurrency_level": {
+      "@id": "blinkops:max_concurrency_level",
+      "@type": "xsd:integer"
+    },
+    "notification_emails": {
+      "@id": "blinkops:notification_emails",
+      "@type": "xsd:string"
+    },
+    "playbook_to_run_on_error": {
+      "@id": "blinkops:playbook_to_run_on_error",
+      "@type": "xsd:string"
+    },
+    "preferred_engine_version": {
+      "@id": "blinkops:preferred_engine_version",
+      "@type": "xsd:string"
+    },
+    "runner": {
+      "@id": "blinkops:runner",
+      "@type": "xsd:string"
+    },
+    "step_transition_limit": {
+      "@id": "blinkops:step_transition_limit",
+      "@type": "xsd:integer"
+    },
+    "tags": {
+      "@id": "blinkops:tags",
+      "@container": "@list"
+    },
+    "PutWorkspaceWsidPlaybooksIdEditResponse": "blinkops:PutWorkspaceWsidPlaybooksIdEditResponse",
+    "PostWorkspaceWsidPlaybooksIdExecuteRequest": "blinkops:PostWorkspaceWsidPlaybooksIdExecuteRequest",
+    "callback": {
+      "@id": "blinkops:callback",
+      "@type": "xsd:string"
+    },
+    "input_values": {
+      "@id": "blinkops:input_values",
+      "@type": "xsd:string"
+    },
+    "past_exec_ref": {
+      "@id": "blinkops:past_exec_ref",
+      "@type": "xsd:string"
+    },
+    "trigger_type": {
+      "@id": "blinkops:trigger_type",
+      "@type": "xsd:string"
+    },
+    "PostWorkspaceWsidPlaybooksIdExecuteResponse": "blinkops:PostWorkspaceWsidPlaybooksIdExecuteResponse",
+    "execution_id": {
+      "@id": "blinkops:execution_id",
+      "@type": "xsd:string"
+    },
+    "PostWorkspaceWsidTableSysGroupsRequest": "blinkops:PostWorkspaceWsidTableSysGroupsRequest",
+    "managed": {
+      "@id": "blinkops:managed",
+      "@type": "xsd:boolean"
+    },
+    "PostWorkspaceWsidTableSysGroupsResponse": "blinkops:PostWorkspaceWsidTableSysGroupsResponse",
+    "GetWorkspaceWsidTableTableResponse": "blinkops:GetWorkspaceWsidTableTableResponse",
+    "PutWorkspaceWsidTableTableFieldsFieldRequest": "blinkops:PutWorkspaceWsidTableTableFieldsFieldRequest",
+    "PutWorkspaceWsidTableTableFieldsFieldResponse": "blinkops:PutWorkspaceWsidTableTableFieldsFieldResponse"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Blink API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Blink's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-24) from openapi/_ae-authored/blinkops-com-openapi-generated.yml.",
+  "dcterms:created": "2026-10-24",
+  "dcterms:source": [
+    "openapi/_ae-authored/blinkops-com-openapi-generated.yml"
+  ]
+}
